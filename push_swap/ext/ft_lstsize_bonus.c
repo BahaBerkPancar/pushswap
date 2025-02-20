@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bpancar <bpancar@student.42.fr>            +#+  +:+       +#+        */
+/*   By: MKRAForce <MKRAForce@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 01:13:42 by bpancar           #+#    #+#             */
-/*   Updated: 2025/02/08 03:08:32 by bpancar          ###   ########.fr       */
+/*   Updated: 2025/02/13 09:01:09 by MKRAForce        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+size_t	ft_lstsize(t_list *lst)
 {
-	int	i;
+	size_t	i;
 
 	i = 1;
 	if (!lst)

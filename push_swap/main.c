@@ -1,48 +1,47 @@
 #include "push_swap.h"
 
-void get_args(t_main *s, char *av[], int flag)
-{
-	int i;
-	char **temp;
-
-	i = 1;
-	if(flag == 0)
-	{
-		temp = NULL;
-		i -= 2;
-		temp = ft_split(av[1], ' ');
-		s->a = ft_lstnew(ft_atoi(temp[0]));
-		while(temp[++i])
-		{
-			ft_lstadd_back(&s->a, ft_lstnew(ft_atoi(temp[i])));
-		}
-		ft_lstprint(s->a);
-	}
-	if (flag == 1)
-	{	
-		s->a = ft_lstnew(ft_atoi(av[1]));
-		while(++i <= s->count)
-			ft_lstadd_back(&s->a, ft_lstnew(ft_atoi(av[i])));
-	}
-}
 void first_step(int ac, char *av[], t_main *s)
 {
-	if(ac < 2)
-		exit(0);
-	s = malloc(sizeof(t_main));
-	if(!s)
+	if (ac < 2)
 		exit(0);
 	s->count = ac - 1;
-	printf("you appear to decide sort %d integers", s->count);
-	if(ac == 2)
+	if (ac == 2)
 		get_args(s, av, 0);
 	else
 		get_args(s, av, 1);
+
+	// rotate(s, 'a');
+	// ft_lstprint(s->a);
+	// swap(s, 'a');
+	// ft_lstprint(s->a);
+	// reverse_rotate(s, 'a');
+	// ft_lstprint(s->a);
+	// push(s, 'b');
+	// ft_lstprint(s->a);
+	// ft_lstprint(s->b);
+	// push(s, 'b');
+	// ft_lstprint(s->a);
+	// ft_lstprint(s->b);
+	// push(s, 'a');
+	// ft_lstprint(s->a);
+	// ft_lstprint(s->b);
+}
+void second_step(t_main *s)
+{
+	if(s->count == 2)
+		two_ints(s, '2');
+	if(s->count == 3)
+		two_ints(s, '3');
 }
 int main(int ac, char *av[])
 {
 	t_main *s;
+
 	s = NULL;
+	s = malloc(sizeof(t_main));
+	if (!s)
+		exit(0);
 	first_step(ac, av, s);
-	
+	second_step(s);
+	ft_lstprint(s->a);
 }
