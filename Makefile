@@ -4,7 +4,7 @@ GIT_PRINTF = git@github.com:BahaBerkPancar/printf-42.git
 GCC = cc
 CFLAGS = -Wall -Wextra -Werror
 PRINTF = printf/libftprintf.a
-SRCS = ext/libft/ft_isdigit.c ext/libft/ft_strcmp.c ext/libft/ft_atoi.c ext/libft/ft_strjoin.c ext/libft/ft_lst_second_last.c ext/libft/ft_lstadd_back_bonus.c ext/libft/ft_lstnew_bonus.c ext/libft/ft_lstlast_bonus.c ext/libft/ft_split.c ext/libft/ft_substr.c ext/libft/ft_strlen.c ext/libft/memcpy.c ext/libft/ft_strdup.c ext/libft/ft_lstprint.c ext/libft/ft_lstsize_bonus.c ext/libft/ft_lstadd_front_bonus.c ext/libft/ft_lstdelone_bonus.c main.c sort/move.c ext/ext.c sort/sort2_3.c sort/sort.c
+SRCS = ext/libft/ft_isdigit.c ext/libft/ft_strcmp.c  sort/rotate_rev.c ext/libft/ft_lstclear_bonus.c ext/libft/ft_atoi.c ext/libft/ft_strjoin.c ext/libft/ft_lst_second_last.c ext/libft/ft_lstadd_back_bonus.c ext/libft/ft_lstnew_bonus.c ext/libft/ft_lstlast_bonus.c ext/libft/ft_split.c ext/libft/ft_substr.c ext/libft/ft_strlen.c ext/libft/memcpy.c ext/libft/ft_strdup.c ext/libft/ft_lstprint.c ext/libft/ft_lstsize_bonus.c ext/libft/ft_lstadd_front_bonus.c ext/libft/ft_lstdelone_bonus.c main.c sort/move.c ext/ext.c sort/sort2_3.c sort/sort.c
 OBJDIR = .obj
 OBJS = $(SRCS:%.c=$(OBJDIR)/%.o)
 

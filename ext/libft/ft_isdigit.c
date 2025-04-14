@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: MKRAForce <MKRAForce@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bpancar <bpancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 01:13:15 by bpancar           #+#    #+#             */
-/*   Updated: 2025/03/31 16:58:56 by MKRAForce        ###   ########.fr       */
+/*   Updated: 2025/04/14 18:56:03 by bpancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	ft_isdigit(char *str)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
-	if(str[i] == '+' || str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
 		i++;
-		if(str[i] == '+' || str[i] == '-' || !str[i])
-			return(0);
+		if (str[i] == '+' || str[i] == '-' || !str[i])
+			return (0);
 	}
-	while(str[i])
+	while (str[i])
 	{
 		if (!(str[i] <= '9' && str[i] >= '0'))
 			return (0);

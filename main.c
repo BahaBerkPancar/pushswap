@@ -3,7 +3,7 @@
 void first_step(int ac, char *av[], t_main *s)
 {
 	if (ac < 2)
-		exit(0);
+		return (free(s), exit(0));
 	if (ac == 2)
 		join_split_and_check(s, av, 0);
 	else
@@ -13,11 +13,12 @@ void first_step(int ac, char *av[], t_main *s)
 
 void second_step(t_main *s)
 {
-	if(s->count < 4)
+	if (sorted_check(s) == 1)
+		return (s_free(s), exit(0));
+	if (s->count < 4)
 		sort_a(s);
 	else
 		sort(s);
-	// printf("%d", sorted_check(s));
 }
 
 int main(int ac, char *av[])

@@ -2,7 +2,7 @@
 
 static void three_ints(t_main *s, char x, int *i, char c)
 {
-	if(x == '3')
+	if (x == '3')
 	{
 		if (i[0] < i[1] && i[0] >= i[2] && i[1] > i[2])
 			reverse_rotate(s, c);
@@ -13,14 +13,14 @@ static void three_ints(t_main *s, char x, int *i, char c)
 			rotate(s, c);
 			swap(s, c);
 		}
-		else if(i[0] > i[1] && i[0] >= i[2] && i[1] < i[2])
+		else if (i[0] > i[1] && i[0] >= i[2] && i[1] < i[2])
 			rotate(s, c);
-		else if(i[0] < i[1] && i[0] <= i[2] && i[1] > i[2])
+		else if (i[0] < i[1] && i[0] <= i[2] && i[1] > i[2])
 		{
 			reverse_rotate(s, c);
 			swap(s, c);
 		}
-		else if(i[0] > i[1] && i[0] > i[2] && i[1] <= i[2])
+		else if (i[0] > i[1] && i[0] > i[2] && i[1] <= i[2])
 			rotate(s, c);
 		else if (i[0] <= i[1] && i[0] > i[2] && i[1] > i[2])
 			reverse_rotate(s, c);
@@ -35,7 +35,7 @@ void two_ints(t_main *s, char x, char c)
 	if (x == '2')
 	{
 		if (s->a->content > s->a->next->content)
-			swap(s, c);		
+			swap(s, c);
 	}
 	else
 	{
@@ -44,8 +44,7 @@ void two_ints(t_main *s, char x, char c)
 			return (errors("alloc error"));
 		i[0] = s->a->content;
 		i[1] = s->a->next->content;
-		i[2] = s->a->next->next->content; 
+		i[2] = s->a->next->next->content;
 		three_ints(s, x, i, c);
 	}
 }
-

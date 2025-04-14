@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: MKRAForce <MKRAForce@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bpancar <bpancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 01:13:28 by bpancar           #+#    #+#             */
-/*   Updated: 2025/02/23 22:51:47 by MKRAForce        ###   ########.fr       */
+/*   Updated: 2025/04/14 18:57:12 by bpancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst)
 {
-	t_list	*temp;
+	t_list	*tmp;
 
-	if (!lst || !del)
+	if (!lst || !*lst)
 		return ;
-	while (*lst != NULL)
+	while (*lst)
 	{
-		temp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = temp;
+		tmp = (*lst)->next;
+		free(*lst);
+		*lst = tmp;
 	}
-	*lst = NULL;
+	free(tmp);
 }
