@@ -1,0 +1,8 @@
+.DS_Store
+.vscode/
+*.o
+.obj/
+push_swap
+*.dSYM/
+# cloned by "make clone"
+printf/
