@@ -14,8 +14,9 @@
 
 void	errors(char *c)
 {
-	perror(c);
-	exit(0);
+	(void)c;
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
 void	free_array(char **str)
@@ -179,7 +180,7 @@ void	join_split_and_check(t_main *s, char *av[], int flag)
 	i = -1;
 	while (temp[++i])
 	{
-		if (ft_isdigit(temp[i]) != 1)
+		if (ft_isdigit(temp[i]) != 1 || !ft_intrange(temp[i]))
 			return (free_array(temp), free(s), errors("Error"));
 	}
 	get_args(s, temp);

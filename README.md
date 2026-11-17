@@ -7,8 +7,8 @@ Sorts a stack of integers using two stacks and a small instruction set, printing
 - Takes integers as separate arguments or as one quoted string (`./push_swap 3 2 1` or `./push_swap "3 2 1"`) and prints one instruction per line.
 - Instructions used: `sa`, `sb`, `ss`, `pa`, `pb`, `ra`, `rb`, `rr`, and the reverse rotations.
 - Special cases for 2 and 3 numbers, and a general algorithm for larger inputs.
-- Prints an error and stops on non-numeric input or duplicate numbers. Nothing is printed when the input is already sorted.
-- Sample run (this build): about 600 instructions for 100 random numbers and about 5500 for 500.
+- Prints `Error` to stderr and exits with status 1 on non-numeric input, duplicate numbers or values outside the `int` range. Nothing is printed when the input is already sorted.
+- Sample run (this build): about 565 instructions on average for 100 random numbers (max 615 over 20 runs) and about 5100 for 500 (max 5293 over 20 runs).
 
 ## Build and run
 
@@ -27,7 +27,7 @@ Example:
 ./push_swap $(seq 1 100 | sort -R | tr '\n' ' ')
 ```
 
-The Makefile clones `git@github.com:BahaBerkPancar/printf-42.git` into `printf/` when that folder does not exist, so it needs access to GitHub over SSH the first time.
+The Makefile clones `https://github.com/BahaBerkPancar/printf-42.git` into `printf/` when that folder does not exist, so it needs network access the first time.
 
 ## How it works
 

@@ -57,6 +57,7 @@ t_list	*ft_lst_second_last(t_list *lst);
 void	errors(char *c);
 void	swap(t_main *s, char c);
 int		ft_isdigit(char *str);
+int		ft_intrange(char *str);
 void	get_args(t_main *s, char **temp);
 void	rotate(t_main *s, char c);
 void	reverse_rotate(t_main *s, char c);

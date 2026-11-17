@@ -106,18 +106,18 @@ void push_one(t_main *s, int index, char flag)
 
 void push_to_b(t_main *s, int index_a, int index_b)
 {
-	if ((s->a < 0 && s->b < 0))
+	if (index_a < 0 && index_b < 0)
 	{
-		while ((index_a < 0 && index_b < 0) && (index_a != 0 && index_b != 0))
+		while (index_a < 0 && index_b < 0)
 		{
 			reverse_rotate(s, 'r');
 			index_a++;
 			index_b++;
 		}
 	}
-	if (s->a > 0 && s->b > 0)
+	if (index_a > 0 && index_b > 0)
 	{
-		while ((index_a > 0 && index_b > 0) && (index_a != 0 && index_b != 0))
+		while (index_a > 0 && index_b > 0)
 		{
 			rotate(s, 'r');
 			index_a--;
@@ -268,6 +268,5 @@ void sort(t_main *s)
 	}
 	get_min_and_max_a(s);
 	push_closest_to_a(s, s->min_a, 'a');
-	printf("%d\n", sorted_check(s));
 	s_free(s);
 }

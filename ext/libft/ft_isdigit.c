@@ -31,3 +31,23 @@ int	ft_isdigit(char *str)
 	}
 	return (1);
 }
+
+int	ft_intrange(char *str)
+{
+	long long	n;
+	int			neg;
+	int			i;
+
+	neg = (*str == '-');
+	i = (*str == '-' || *str == '+');
+	n = 0;
+	while (str[i])
+	{
+		n = n * 10 + (str[i++] - '0');
+		if (n > 2147483648LL)
+			return (0);
+	}
+	if (neg)
+		return (n <= 2147483648LL);
+	return (n <= 2147483647LL);
+}

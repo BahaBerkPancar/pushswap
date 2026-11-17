@@ -1,6 +1,6 @@
 NAME = push_swap
 
-GIT_PRINTF = git@github.com:BahaBerkPancar/printf-42.git
+GIT_PRINTF = https://github.com/BahaBerkPancar/printf-42.git
 GCC = cc
 CFLAGS = -Wall -Wextra -Werror
 PRINTF = printf/libftprintf.a
